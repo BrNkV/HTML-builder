@@ -10,9 +10,8 @@
 
 const path = require('path');
 const fs = require('fs');
-const process = require('process');
-const Emitter = require('events');
-
+// const EventEmitter = require('events');
+const { stdin, stdout } = process;
 
 const filePath = path.join(__dirname, 'text02.txt');
 
