@@ -6,6 +6,8 @@
 * Запись текста в файл
 * Ожидание дальнейшего ввода
 * Реализация прощального сообщения при остановке процесса
+
+start -- node 02-write-file
  */
 
 const path = require('path');
@@ -23,7 +25,8 @@ stdout.write('Для выхода нажмите Ctrl + C или введите 
 stdin.on('data', data => {
   const dataStr = data.toString().trim();
 
-  if (dataStr == 'exit') { 
+  if (dataStr == 'exit') {
+    stdout.write('Выход произведен через ввод "exit". Спасибо за проверку!');
     process.exit();
   } else {
     fs.appendFile(filePath, data, () => { });
@@ -31,5 +34,6 @@ stdin.on('data', data => {
 });
 
 process.on('SIGINT', () => {
+  stdout.write('Выход произведен нажатием Ctrl + C. Спасибо за проверку!');
   process.exit();
 }); 
