@@ -10,3 +10,5 @@
 
 const fs = require('fs');
 const path = require('path');
+
+console.log('задание ввыполняю, просьба по возможности перепроверить позже...Спасибо!');
